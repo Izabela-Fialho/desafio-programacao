@@ -1,1 +1,102 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+h1{
+  font-size: 36px;
+}
+
+h2{
+  color: black;
+  font-size: 26px;
+}
+
+
+p{
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.container{
+  display: grid;
+  justify-items: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.subcontainer{
+  width: 70vw;
+  display: grid;
+}
+
+.reference{
+  font-size: 11px;
+  margin:5px;
+  color: brown;
+}
+
+
+.grupo-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 20px solid transparent;
+  border-top: 20px solid #ffbd59;
+  border-right: 20px solid #ffbd59;
+}
+
+.content h3 {
+  text-align: center;
+  color: #92C67A;
+  margin-bottom: 15px;
+  font-size: 20px;
+  position: relative;
+}
+
+.content h3::before {
+  content: '';
+  position: absolute;
+  right: 2px;
+  width: 40px;
+  bottom: 4px;
+}
+
+.content p {
+  color: #b7b7b7;
+}
+
+#read_button {
+  border: none;
+  padding: 10px;
+  border-radius: 2px;
+  margin-top: 15px;
+  background-color: #fdbf01;
+  color: #313131;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+#read_button:hover {
+  background-color:  #92C67A;
+  color: #f8eece;
+  transition: all 0.2s ease-in-out;
+}

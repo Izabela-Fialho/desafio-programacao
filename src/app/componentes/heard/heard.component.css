@@ -1,0 +1,37 @@
+
+header{
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(110, 110, 108, 0.2);
+  padding: 5px;
+
+}
+
+.conatiner-header{
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-menu{
+  display: inline-flex;
+  list-style: none;
+}
+
+.list-menu-link{
+  text-decoration: none;
+  color:black;
+  margin-left: 10px;
+}
+
+.list-menu-link:hover{
+  color: #ffa400;
+}
+
+@media screen and (max-width: 500px) {
+  .conatiner-header{
+    width: 90%;
+    display: flex;
+  }
+}

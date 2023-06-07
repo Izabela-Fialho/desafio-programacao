@@ -1,0 +1,28 @@
+footer{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: aliceblue;
+  height: 100px;
+}
+
+.container-footer{
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-footer img{
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .rodape{
+    width: 90%;
+    display: flex;
+  }
+}

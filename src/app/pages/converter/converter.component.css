@@ -1,0 +1,101 @@
+.markers{
+  margin-left: 40px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.element-line-text::after{
+  content: '';
+  display: block;
+  width: 8.5rem;
+  height: 0.4rem;
+  background-color: #fdbf01;
+  margin: 2px auto;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px;
+  padding: 25px;
+  background-color: rgba(65, 61, 58);
+  text-align: justify;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.385);
+  position: relative;
+  width: 280px;
+  height: 350px;
+}
+
+.content{
+  display: grid;
+  justify-items: center;
+}
+
+input {
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+input[type=tel] {
+  background-color: #cccccc;
+  border-radius: 20px;
+  font-family: monospace;
+  font-size: 16px;
+  height: 40px;
+  margin-bottom: 24px;
+  padding: 10px;
+  text-align: center;
+  width: 190px;
+  cursor: not-allowed;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  background-color: #cccccc;
+  border-radius: 20px;
+  padding: 16px;
+  width: 180px;
+}
+
+input[type=button] {
+  border-radius: 6px;
+  cursor: pointer;
+  height: 40px;
+  font-size: 16px;
+}
+
+input[type=button]:hover {
+  background-color:  #92C67A;;
+  color: #f8eece;
+}
+
+.keyboard input[value="c"] ,input[value="<"] {
+  color:#cc9b06 ;
+  font-weight: 700;
+}
+
+.equal-arabico {
+  grid-column: span 3;
+  width: 130px;
+  background-color: #fdbf01;
+  color: #313131;
+}
+
+.equal-romanos{
+  grid-column: span 4;
+  width: 180px;
+  background-color: #fdbf01;
+  color: #313131;
+}
+
+.observation{
+  margin-top: 30px;
+}

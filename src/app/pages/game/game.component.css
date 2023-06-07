@@ -1,0 +1,91 @@
+.element-line-text::after{
+  content: '';
+  display: block;
+  width: 10rem;
+  height: 0.4rem;
+  background-color: #fdbf01;
+  margin: 2px auto;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px;
+  padding: 25px;
+  background-color: rgba(65, 61, 58);
+  text-align: justify;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.385);
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.content{
+  display: grid;
+  justify-items: center;
+}
+
+input {
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  background-color: #cccccc;
+  border-radius: 20px;
+  padding: 16px;
+  width: 260px;
+}
+
+input[type=button] {
+  border-radius: 2px;
+  cursor: pointer;
+  height: 20px;
+}
+
+input[type=button]:hover {
+  background-color: #fdbf01;
+  color: #f8eece;
+}
+
+/* ............................................. */
+
+.game{
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  margin: -5px;
+}
+
+.game button{
+  width: 20px;
+  height: 20px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.game button:hover{
+ background-color: white;
+}
+
+.game button.alive{
+  background-color:#fdbf01 ;
+}
+
+.info button{
+  margin: 5px;
+}

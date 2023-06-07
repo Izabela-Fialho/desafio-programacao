@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.container-banner{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  padding: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  background: linear-gradient(90deg, #fffffe 80%, #ffbd59 20%);
+}
+.container-texts {
+  display: grid;
+  text-align: center;
+
+}
+
+.subcontainer-banner{
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.image-banner{
+  vertical-align: middle;
+  margin-right: 0%;
+}
+
+.subtitle{
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+}
+
+/* ...................................................... */
+
+.element-line-text::after{
+  content: '';
+  display: block;
+  width: 15rem;
+  height: 0.4rem;
+  background-color: #fdbf01;
+  margin: 2px auto;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px;
+  width: 300px;
+  height: 400px;
+  padding: 25px;
+  background-color: rgba(65, 61, 58);
+  text-align: justify;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.385);
+  position: relative;
+}
+
+.icon {
+  margin-bottom: 20px;
+}
+
+.icon img {
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+
+
+@media screen and (max-width: 986px){
+  .container-banner{
+    background:linear-gradient(90deg, #ffff 50%, #ffbd59 );
+    height: 70vw;
+    width: 100%;
+  }
+  .image-banner{
+    display: none;
+  }
+}
+
+
