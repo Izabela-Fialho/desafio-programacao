@@ -9,32 +9,57 @@ import Decimal from 'decimal.js';
   styleUrls: ['./restaurant-calculator.component.css']
 })
 export class RestaurantCalculatorComponent {
-  visibleproduct:boolean = false
-  visibleclient:boolean = false
   nextProductId = 1;
   nextProductMesaId= 1;
+
   public nomeproduto = "";
   public precoproduto:number = 0;
   public nomecliente = "";
   public novoconsumido ="";
-
   public produtos: { id: number, name: string, price: number }[] = [];
   public produtomesas: { id: number, name: string, price: number }[] =[];
-
   public listaTotal: { nome: string, subtotal: number, total: number }[] = [];
-
   public clientes: { name: string, consumerProduct: number[] }[] =[]
 
-
-  openPopup(tipo:string){
-    if (tipo == "product"){
-      this.visibleproduct = !this.visibleproduct
-    } else {
-      this.visibleclient = !this.visibleclient
+  adicionaProduto():void {
+    const novoProduto = {id:this.nextProductId, name: this.nomeproduto, price: this.precoproduto };
+    const modal: HTMLElement | null = document.querySelector('.modal-box')
+    console.log(novoProduto);
+    this.produtos.push(novoProduto);
+    this.nextProductId++;
+    if (modal == null){
+      //pass
+    }else {
+      modal.classList.remove('active');
     }
   }
 
-  buildFram(){
+  addCliente():void{
+    const modal: HTMLElement | null = document.querySelector('.modal-box-client')
+    this.clientes.push({name: this.nomecliente, consumerProduct:[]});
+    if (modal == null){
+      //pass
+    }else {
+      modal.classList.remove('active');
+    }
+  }
+
+  addMesa(produto:any):void{
+    const totalItens = this.produtomesas.length;
+    const novoProdutoMesa = {id:totalItens +1, name: produto.name, price: produto.price };
+    console.log(novoProdutoMesa);
+    this.produtomesas.push(novoProdutoMesa);
+  }
+
+  deleteProduto(item:any):void {
+    this.produtos.splice(this.produtos.indexOf(item,1))
+  }
+
+  deleteProdutoMesa(item:any):void {
+    this.produtomesas.splice(this.produtomesas.indexOf(item,1))
+  }
+
+  buildFram():void{
     for (const cliente of this.clientes) {
       cliente.consumerProduct = [];
       console.log(cliente.consumerProduct)
@@ -50,28 +75,7 @@ export class RestaurantCalculatorComponent {
     }
   }
 
-  addMesa(produto:any){
-    const totalItens = this.produtomesas.length;
-    const novoProdutoMesa = {id:totalItens +1, name: produto.name, price: produto.price };
-    console.log(novoProdutoMesa);
-    this.produtomesas.push(novoProdutoMesa);
-  }
-
-  addCliente(){
-    this.clientes.push({name: this.nomecliente, consumerProduct:[]});
-    this.visibleclient = false;
-  }
-
-  adicionaProduto():void {
-    const novoProduto = {id:this.nextProductId, name: this.nomeproduto, price: this.precoproduto };
-    console.log(novoProduto);
-    this.produtos.push(novoProduto);
-    this.nextProductId++;
-    this.visibleproduct = false;
-  }
-
-
-  calcularValorPagoPorCliente() {
+  calcularValorPagoPorCliente():void {
     this.listaTotal = [];
 
     for (const cliente of this.clientes) {
@@ -116,7 +120,7 @@ export class RestaurantCalculatorComponent {
     console.log(this.listaTotal);
   }
 
-  openModal(selecttype:string ,edit = false, index = 0) {
+  openModal(selecttype:string ):void {
     if (selecttype == "product"){
       const modal: HTMLElement | null = document.querySelector('.modal-box');
       if (modal) {

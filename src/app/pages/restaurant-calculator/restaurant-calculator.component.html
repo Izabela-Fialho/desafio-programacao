@@ -10,6 +10,11 @@
     <p> - Um cliente pode ter consumido vários, um ou nenhum produto; </p>
     <p> - Um produto pode ter sido consumido por vários ou um cliente; </p>
     <p> - Verificar a inclusão dos 10% do serviço para cada pessoa individualmente,sendo a taxa aplicada ao valor que cada um gastou.</p>
+    <h2>Como utilizar:</h2>
+    <p> 1° Adicione um ou mais produtos ao menu; </p>
+    <p> 2° Adicione um ou mais produtos do menu a mesa; </p>
+    <p> 3° Adicione um ou mais clientes a mesa; </p>
+    <p> 1° Selecione quais produtos cada cliente consumiu e calcule o valor a pagar. </p>
   </div>
   <div class="text">
     <h2 class="element-line-text"> Calculadora </h2>
@@ -17,7 +22,7 @@
 
   <div class="grupo-card">
     <div class="card ">
-      <button class="button-include" (click)="openPopup('product')"> Novo </button>
+      <button class="button-include" (click)="openModal('product')"> Adicionar Produto </button>
       <h3>Menu </h3>
       <div class="divTable">
         <table>
@@ -25,19 +30,22 @@
             <tr class="menu">
               <th>Produto</th>
               <th> Valor</th>
-              <th> Consumido </th>
+              <th>  </th>
             </tr>
           </thead>
           <thead class="itens" *ngFor="let produto of produtos">
             <tr>
               <th>{{produto.name}}</th>
               <th>{{produto.price | currency:'BRL':'symbol':'1.2-2'}} </th>
-              <th id="button-add-mesa">  <button (click)="addMesa(produto)"> add </button>  </th>
+              <th id="button-add-mesa">  <button (click)="addMesa(produto)"> Add Mesa </button>
+                <button id="button-delete" (click)="deleteProduto(produto)"> Excluir </button>
+              </th>
             </tr>
           </thead>
         </table>
       </div>
-      <div  class="modal-box" *ngIf="visibleproduct">
+      <div class="modal-box">
+        <div class="modal-container">
         <h3>Cadastro de produtos</h3>
         <label for="nome-produtol"> Produto</label>
         <input type="text" [(ngModel)]="nomeproduto" id="nome-produtol">
@@ -45,6 +53,7 @@
         <input type="number" min="0.00" max="10000.00" step="0.01" [(ngModel)]="precoproduto" id="tipo-produtol">
         <div class="center-button">
           <button class="button-add"(click)="adicionaProduto()">Adicionar</button>
+        </div>
         </div>
       </div>
     </div>
@@ -59,8 +68,9 @@
             <tr class="menu">
               <th> </th>
               <th> </th>
+              <th> </th>
               <th> Clientes
-                <button id="more" (click)="openPopup('client')"> + </button>
+                <button id="more" (click)="openModal('client')"> + </button>
               </th>
             </tr>
           </thead>
@@ -68,6 +78,7 @@
             <tr class="menu">
               <th>Produto</th>
               <th> Valor</th>
+              <th> </th>
               <th>
                 <tr id="list-consumer" *ngFor="let cliente of clientes" >
                   {{cliente.name}}
@@ -79,6 +90,7 @@
             <tr>
               <th>{{produtomesa.name}}</th>
               <th> {{produtomesa.price | currency:'BRL':'symbol':'1.2-2'}} </th>
+              <th> <button id="button-delete" (click)="deleteProdutoMesa(produtomesa)"> Excluir </button></th>
               <th>
                 <tr id="list-checkbox" *ngFor="let cliente of clientes" >
                     <input type="checkbox" (click)="buildFram()" id="checkbox-{{cliente.name}}-{{produtomesa.id}}">
@@ -90,6 +102,7 @@
             <tr class="menu">
               <th> Taxa </th>
               <th> 10% </th>
+              <th></th>
               <th>
                 <tr id="list-checkbox" *ngFor="let cliente of clientes" >
                   <input type="checkbox"id="checkbox-taxa-{{cliente.name}}" >
@@ -103,12 +116,14 @@
         </div>
       </div>
 
-      <div class="modal-box-client"  *ngIf="visibleclient">
+      <div class="modal-box-client" id="modal-box-client">
+        <div class="modal-container-client">
         <h3>Cadastro de Clientes</h3>
         <label for="nome-cliente">Nome:</label>
         <input type="text" [(ngModel)]="nomecliente" id="nome-cliente">
         <div class="center-button">
           <button class="button-add" (click)="addCliente()">Adicionar</button>
+        </div>
         </div>
       </div>
     </div>
@@ -116,7 +131,7 @@
     <!-- Conta  -->
 
     <div class="card">
-      <h3> Conta </h3>
+      <h3> Valor a Pagar </h3>
       <div class="divTable">
         <table>
           <thead>
@@ -137,39 +152,6 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-  <!-- </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </div>
 
 </div>
-
-
