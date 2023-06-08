@@ -34,7 +34,7 @@ git clone https://github.com/Izabela-Fialho/desafio-programacao.git
 ```
 - Navegue até o diretório criado
 ```bash
-cd my-project
+cd desafio-programacao
 ```
 - Instale os pacotes necessários
 ```bash
