@@ -1,4 +1,3 @@
-
 .element-line-text::after{
   content: '';
   display: block;
@@ -14,41 +13,91 @@
   margin: 10px;
 }
 
-
-.modal-box{
-  display: grid;
+.modal-box {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+.modal-box.active {
   color: white;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%,-50%);
+  margin-bottom: 80%;
   background-color: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 5px 0 #242724 ;
-  padding: 15px;
-  border-radius: 15px;
-  min-width:420px ;
-  max-width:900px ;
+  display: grid;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+display: grid;
+grid-auto-rows: 30px;
+background-color: rgba(196, 193, 193, 0.6);
+padding: 15px;
+border-radius: 15px;
+min-width:220px ;
+max-width:450px ;
+min-height: 220px;
+}
+.modal-container label{
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.modal-container button{
+  margin-top: 20px;
+
 }
 
 .modal-box input {
   box-shadow: 0 5px 0 #242724 ;
 }
 
-.modal-box-client{
-  display: grid;
+.modal-box-client {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+.modal-box-client.active {
   color: white;
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  margin-bottom: 80%;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 5px 0 #242724 ;
-  padding: 15px;
-  border-radius: 15px;
-  min-width:420px ;
-  max-width:900px ;
+  display: grid;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
 }
 
+.modal-container-client {
+display: grid;
+grid-auto-rows: 30px;
+background-color: rgba(196, 193, 193, 0.6);
+padding: 15px;
+border-radius: 15px;
+min-width:220px ;
+max-width:450px ;
+min-height: 170px;
+}
+.modal-container-client label{
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.modal-container-client button{
+  margin-top: 20px;
+
+}
 .modal-box-client input {
   box-shadow: 0 5px 0 #242724 ;
 }
@@ -105,9 +154,16 @@ th{
 }
 
 #button-add-mesa button{
-  width: 40px;
+  width: 47px;
 }
 
+#button-delete {
+  width: 47px;
+}
+#button-delete:hover {
+  background-color: #da2b14;
+  color: white;
+}
 
 button{
   cursor: pointer;
@@ -115,7 +171,7 @@ button{
 .button-include{
   background-color: #fdbf01 ;
   color: black;
-  width: 60px;
+  width: 120px;
 }
 
 .button-include:hover{
@@ -129,7 +185,7 @@ th button{
 }
 
 th button:hover{
-  background-color: #fdbf01 ;
+  background-color: #92C67A ;
 }
 
 #more{
