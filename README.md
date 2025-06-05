@@ -1,6 +1,12 @@
 <h1 align="center">  💻 Teste de Programação - Rota das Oficinas </h1>
 <h2> Sobre </h2>
-Esse é um teste de programação realizado durante o processo de seletivo para estágio da empresa Rota das Oficinas.
+Este é um teste de programação realizado durante o processo seletivo para estágio na empresa Rota das Oficinas. Nele, você encontrará:
+
+- Um tabuleiro interativo do Jogo da Vida de Conway.
+
+- Um divisor de conta de restaurante.
+
+- Um conversor de números romanos para arábicos e vice-versa.
 
 <h2> 🌐 Demonstração</h2>
 Acesse o projeto em produção : 
